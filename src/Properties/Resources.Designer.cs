@@ -79,12 +79,5 @@ namespace LOIC.Properties {
                 return ((System.Drawing.Icon)(obj));
             }
         }
-
-        internal static System.Drawing.Bitmap WTF {
-            get {
-                object obj = ResourceManager.GetObject("WTF", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
     }
 }

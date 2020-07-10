@@ -12,7 +12,6 @@ namespace LOIC
 	public class Settings
 	{
 		private static readonly string EulaSetting = "AcceptEULA";
-		private static readonly string KonamiSetting = "KonaniCode";
 
 		public static bool HasAcceptedEula()
 		{
@@ -22,16 +21,6 @@ namespace LOIC
 		public static bool SaveAcceptedEula()
 		{
 			return UpdateSetting(EulaSetting, "1");
-		}
-
-		public static bool HasKonamiCode()
-		{
-			return (false == String.IsNullOrEmpty(ReadSetting(KonamiSetting)));
-		}
-
-		public static bool SaveKonamiCode()
-		{
-			return UpdateSetting(KonamiSetting, "1");
 		}
 
 		public static string ReadSetting(string key, bool emptyUndefined = true)

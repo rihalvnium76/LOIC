@@ -24,7 +24,7 @@ namespace LOIC
 		private List<IFlooder> arr = new List<IFlooder>();
 		private StringCollection aUpOLSites = new StringCollection();
 		private StringCollection aDownOLSites = new StringCollection();
-		private bool bIsHidden = false, bKonami = false, bResp, intShowStats;
+		private bool bIsHidden = false, bResp, intShowStats;
 		private string sMethod, sData, sSubsite, sTargetHost = "", sTargetIP = "";
 		private int iPort, iThreads, iDelay, iTimeout, iSockspThread;
 		private Protocol protocol;
@@ -69,7 +69,6 @@ namespace LOIC
 					}
 				}
 			}
-			bKonami = Konami.Check(this);
 
 			// IRC
 			if(ircserver.Length > 0)
@@ -102,7 +101,7 @@ namespace LOIC
 						Wtf ("I don't think ports are supposed to be written like THAT.", silent);
 						return;
 					}
-					if (!Functions.ParseInt(txtThreads.Text, 1, (bKonami ? 1337 : 99), out iThreads)) {
+					if (!Functions.ParseInt(txtThreads.Text, 1, 2048, out iThreads)) {
 						Wtf ("What on earth made you put THAT in the threads field?", silent);
 						return;
 					}
@@ -244,8 +243,7 @@ namespace LOIC
 				return;
 			}
 
-			new frmWtf().Show();
-			MessageBox.Show(message, "What the shit.");
+			MessageBox.Show(message, "Error!");
 		}
 
 		/// <summary>
@@ -801,7 +799,7 @@ namespace LOIC
 		/// <param name="e">EventArgs.</param>
 		private void frmMain_Load(object sender, EventArgs e)
 		{
-			string unlocked = bKonami ? " | *UNLEASHED*" : "";
+			string unlocked = " [MODIFIED]";
 			this.Text = String.Format("{0} | When harpoons, air strikes and nukes fail | v. {1}{2}", Application.ProductName, Application.ProductVersion, unlocked);
 		}
 
@@ -1501,8 +1499,7 @@ namespace LOIC
 				if (textOLServer.Text == "")
 				{
 					disableHive.Checked = true;
-					new frmWtf().Show();
-					MessageBox.Show("Did you filled OverLord URL correctly?", "What the shit.");
+					MessageBox.Show("Did you filled OverLord URL correctly?", "Error!");
 					return;
 				}
 				DoHive(false);

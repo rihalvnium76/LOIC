@@ -46,7 +46,6 @@
   <ItemGroup>
     <Compile Include="cHLDos.cs" />
     <Compile Include="IFlooder.cs" />
-    <Compile Include="Konami.cs" />
     <Compile Include="ReqState.cs" />
     <Compile Include="frmEZGrab.cs">
       <SubType>Form</SubType>
@@ -66,12 +65,6 @@
     <Compile Include="frmEULA.Designer.cs">
       <DependentUpon>frmEULA.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmWtf.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmWtf.Designer.cs">
-      <DependentUpon>frmWtf.cs</DependentUpon>
-    </Compile>
     <Compile Include="Functions.cs" />
     <Compile Include="HTTPFlooder.cs" />
     <Compile Include="Program.cs" />
@@ -85,10 +78,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmEULA.resx">
       <DependentUpon>frmEULA.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmWtf.resx">
-      <DependentUpon>frmWtf.cs</DependentUpon>
-      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -108,7 +97,6 @@
     <None Include="app.config" />
     <None Include="app.manifest" />
     <None Include="Resources\EULA.rtf" />
-    <None Include="Resources\WTF.jpg" />
     <None Include="Resources\LOIC.gif" />
     <None Include="Resources\LOIC.ico" />
   </ItemGroup>
